@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>Home Automation</title>
+</head>
+<body>
+<p align="center">
+<font size="8">
+<b><a href="led.php?state=1">ON</a></b> /
+<b><a href="led.php?state=0">OFF</a></b>
+</font>
+</p>
+<p align="center">
+<font size="8">
+<b>temperature is</b>
+
+<b>
+<?php
+$f = fopen("temp.txt", "r");
+// Read line by line until end of file
+while(!feof($f)) { 
+    echo fgets($f) . "<br />";
+}
+fclose($f);
+?>
+</b>
+</font>
+</p>
+<META HTTP-EQUIV="refresh" CONTENT="5;URL=index.html">
+</body>
+</html>
