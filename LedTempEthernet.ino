@@ -118,18 +118,6 @@ void httpRequestLed() {
     // kf you didn't get a connection to the server:
     Serial.println("connection failed");
   }
-  // if there are incoming bytes available
-  // from the server, read them and print them:
-  for(;client.available();) {
-    c= client.read();
-    Serial.print(c);
-  }
-   if (c == '1')
-      ledState = HIGH;
-  if (c == '0')
-      ledState = LOW;
-      
-  digitalWrite(ledPin, ledState);
     
 }
 void httpRequestTemp() {
